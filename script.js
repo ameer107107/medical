@@ -1,5 +1,6 @@
-// Language state
+// Language and theme state
 let currentLang = 'en';
+let isDarkMode = false;
 
 // Medical Products Data with IDs and Images
 const products = [
@@ -196,6 +197,46 @@ function toggleLanguage() {
     updateTextContent();
 }
 
+// Dark mode functionality
+function toggleDarkMode() {
+    isDarkMode = !isDarkMode;
+    const html = document.documentElement;
+    
+    if (isDarkMode) {
+        html.setAttribute('data-theme', 'dark');
+        localStorage.setItem('darkMode', 'true');
+    } else {
+        html.setAttribute('data-theme', 'light');
+        localStorage.setItem('darkMode', 'false');
+    }
+    
+    updateDarkModeIcon();
+}
+
+// Update dark mode icon
+function updateDarkModeIcon() {
+    const darkModeIcon = document.querySelector('.dark-mode-icon');
+    if (darkModeIcon) {
+        darkModeIcon.textContent = isDarkMode ? '☀️' : '🌙';
+    }
+}
+
+// Initialize dark mode from localStorage
+function initializeDarkMode() {
+    const savedMode = localStorage.getItem('darkMode');
+    const html = document.documentElement;
+    
+    if (savedMode === 'true') {
+        isDarkMode = true;
+        html.setAttribute('data-theme', 'dark');
+    } else {
+        isDarkMode = false;
+        html.setAttribute('data-theme', 'light');
+    }
+    
+    updateDarkModeIcon();
+}
+
 // Update all text content based on current language
 function updateTextContent() {
     const elements = document.querySelectorAll('[data-en][data-ar]');
@@ -348,6 +389,9 @@ function handleContactForm(event) {
 
 // Initialize page functionality
 document.addEventListener('DOMContentLoaded', function() {
+    // Initialize dark mode from saved preference
+    initializeDarkMode();
+    
     // Set up category buttons event listeners
     const categoryButtons = document.querySelectorAll('.category-btn');
     categoryButtons.forEach(button => {
