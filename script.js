@@ -150,9 +150,19 @@ function updateTextContent() {
     const elements = document.querySelectorAll('[data-en][data-ar]');
     elements.forEach(element => {
         if (currentLang === 'ar') {
-            element.innerHTML = element.getAttribute('data-ar');
+            // Use textContent for simple text elements to preserve structure
+            if (element.children.length === 0) {
+                element.textContent = element.getAttribute('data-ar');
+            } else {
+                element.innerHTML = element.getAttribute('data-ar');
+            }
         } else {
-            element.innerHTML = element.getAttribute('data-en');
+            // Use textContent for simple text elements to preserve structure
+            if (element.children.length === 0) {
+                element.textContent = element.getAttribute('data-en');
+            } else {
+                element.innerHTML = element.getAttribute('data-en');
+            }
         }
     });
     
