@@ -3,17 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Medical Supplies - Products</title>
+    <title>MediStore - Medical Equipment & Healthcare Products</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
         <nav class="navbar">
             <div class="logo">
-                <h2 data-en="Medical Supplies" data-ar="اللوازم الطبية">Medical Supplies</h2>
+                <h2 data-en="MediStore" data-ar="ميدي ستور">MediStore</h2>
             </div>
             <ul class="nav-links">
-                <li><a href="index.html" data-en="Products" data-ar="المنتجات" class="active">Products</a></li>
+                <li><a href="index.html" data-en="Home" data-ar="الرئيسية" class="active">Home</a></li>
+                <li><a href="products.html" data-en="Products" data-ar="المنتجات">Products</a></li>
                 <li><a href="about.html" data-en="About Us" data-ar="من نحن">About Us</a></li>
                 <li><a href="contact.html" data-en="Contact" data-ar="اتصل بنا">Contact</a></li>
             </ul>
@@ -23,27 +24,49 @@
         </nav>
     </header>
 
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title" data-en="MediStore" data-ar="ميدي ستور">MediStore</h1>
+            <p class="hero-subtitle" data-en="Professional Medical Equipment & Healthcare Products" data-ar="معدات طبية احترافية ومنتجات رعاية صحية">Professional Medical Equipment & Healthcare Products</p>
+            <a href="products.html" class="browse-btn" data-en="Browse Products" data-ar="تصفح المنتجات">
+                <span class="btn-icon">🏥</span>
+                Browse Products
+            </a>
+        </div>
+    </section>
+
     <main>
-        <div class="page-title">
-            <h1 data-en="Medical Products" data-ar="المنتجات الطبية">Medical Products</h1>
-        </div>
-
-        <div class="classification-bar">
-            <div class="category-buttons">
-                <button class="category-btn active" data-category="all" data-en="All Products" data-ar="جميع المنتجات">All Products</button>
-                <button class="category-btn" data-category="supplies" data-en="Medical Supplies" data-ar="اللوازم الطبية">Medical Supplies</button>
-                <button class="category-btn" data-category="devices" data-en="Medical Devices" data-ar="الأجهزة الطبية">Medical Devices</button>
-                <button class="category-btn" data-category="medicines" data-en="Medicines" data-ar="الأدوية">Medicines</button>
+        <!-- Why Choose MediStore Section -->
+        <section class="why-choose">
+            <div class="section-container">
+                <h2 class="section-title" data-en="Why Choose MediStore" data-ar="لماذا تختار ميدي ستور">Why Choose MediStore</h2>
+                
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🏥</div>
+                        <h3 data-en="Premium Quality" data-ar="جودة عالية">Premium Quality</h3>
+                        <p data-en="All our products meet the highest medical standards and certifications" data-ar="جميع منتجاتنا تلبي أعلى المعايير الطبية والشهادات">All our products meet the highest medical standards and certifications</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">👥</div>
+                        <h3 data-en="Expert Service" data-ar="خدمة خبراء">Expert Service</h3>
+                        <p data-en="Our team of medical professionals provides expert guidance and support" data-ar="فريقنا من المهنيين الطبيين يوفر الإرشاد والدعم المتخصص">Our team of medical professionals provides expert guidance and support</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">📞</div>
+                        <h3 data-en="24/7 Support" data-ar="دعم على مدار الساعة">24/7 Support</h3>
+                        <p data-en="Round-the-clock customer service and technical support for all our clients" data-ar="خدمة عملاء ودعم فني على مدار الساعة لجميع عملائنا">Round-the-clock customer service and technical support for all our clients</p>
+                    </div>
+                </div>
             </div>
-        </div>
-
-        <div class="products-container" id="productsContainer">
-            <!-- Products will be populated here -->
-        </div>
+        </section>
     </main>
 
     <footer>
-        <p data-en="&copy; 2025 Medical Supplies. All rights reserved." data-ar="&copy; 2025 اللوازم الطبية. جميع الحقوق محفوظة.">&copy; 2025 Medical Supplies. All rights reserved.</p>
+        <p data-en="&copy; 2025 MediStore. All rights reserved." data-ar="&copy; 2025 ميدي ستور. جميع الحقوق محفوظة.">&copy; 2025 MediStore. All rights reserved.</p>
     </footer>
 
     <script src="script.js"></script>

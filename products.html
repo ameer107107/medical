@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediStore - Products</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <h2 data-en="MediStore" data-ar="ميدي ستور">MediStore</h2>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html" data-en="Home" data-ar="الرئيسية">Home</a></li>
+                <li><a href="products.html" data-en="Products" data-ar="المنتجات" class="active">Products</a></li>
+                <li><a href="about.html" data-en="About" data-ar="من نحن">About</a></li>
+                <li><a href="contact.html" data-en="Contact" data-ar="اتصل بنا">Contact</a></li>
+            </ul>
+            <div class="language-switch">
+                <button id="langBtn" onclick="toggleLanguage()" data-en="عربي" data-ar="English">عربي</button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="page-title">
+            <h1 data-en="Medical Products" data-ar="المنتجات الطبية">Medical Products</h1>
+        </div>
+
+        <div class="classification-bar">
+            <div class="category-buttons">
+                <button class="category-btn active" data-category="all" data-en="All Products" data-ar="جميع المنتجات">All Products</button>
+                <button class="category-btn" data-category="supplies" data-en="Medical Supplies" data-ar="اللوازم الطبية">Medical Supplies</button>
+                <button class="category-btn" data-category="devices" data-en="Medical Devices" data-ar="الأجهزة الطبية">Medical Devices</button>
+                <button class="category-btn" data-category="medicines" data-en="Medicines" data-ar="الأدوية">Medicines</button>
+            </div>
+        </div>
+
+        <div class="products-container" id="productsContainer">
+            <!-- Products will be populated here -->
+        </div>
+    </main>
+
+    <footer>
+        <p data-en="&copy; 2025 MediStore. All rights reserved." data-ar="&copy; 2025 ميدي ستور. جميع الحقوق محفوظة.">&copy; 2025 MediStore. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
