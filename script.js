@@ -221,7 +221,7 @@ function updateDarkModeIcon() {
     }
 }
 
-// Initialize dark mode from localStorage
+// Initialize dark mode from localStorage (called early to prevent FOUC)
 function initializeDarkMode() {
     const savedMode = localStorage.getItem('darkMode');
     const html = document.documentElement;
@@ -234,8 +234,19 @@ function initializeDarkMode() {
         html.setAttribute('data-theme', 'light');
     }
     
-    updateDarkModeIcon();
+    // Update icon after DOM is ready
+    setTimeout(() => updateDarkModeIcon(), 0);
 }
+
+// Initialize theme immediately to prevent FOUC
+(function() {
+    const savedMode = localStorage.getItem('darkMode');
+    if (savedMode === 'true') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+    } else {
+        document.documentElement.setAttribute('data-theme', 'light');
+    }
+})();
 
 // Update all text content based on current language
 function updateTextContent() {
