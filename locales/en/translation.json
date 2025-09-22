@@ -1,0 +1,142 @@
+
+
+  {
+    "title": "My Medical Store",
+    "welcome": "Welcome to our store",
+    "intro": "We supply medical devices and medicines.",
+    "buttons": {
+      "order": "Order via WhatsApp"
+    },
+    "categories": {
+      "all": "All",
+      "supplies": "Medical Supplies",
+      "devices": "Medical Devices",
+      "medicines": "Medicines"
+    },
+    "products": {
+      "MS001": {
+        "name": "Surgical Gloves (Box of 100)",
+        "description": "Sterile latex surgical gloves for medical procedures",
+        "price": "$45.99"
+      },
+      "MS002": {
+        "name": "Disposable Face Masks (50 Pack)",
+        "description": "3-layer surgical masks with ear loops",
+        "price": "$29.99"
+      },
+      "MS003": {
+        "name": "Sterile Gauze Pads (4x4 inch)",
+        "description": "Absorbent gauze pads for wound care",
+        "price": "$12.50"
+      },
+      "MS004": {
+        "name": "Medical Tape Roll",
+        "description": "Hypoallergenic adhesive medical tape",
+        "price": "$8.75"
+      },
+      "MS005": {
+        "name": "Alcohol Prep Pads (200 Pack)",
+        "description": "70% isopropyl alcohol prep pads",
+        "price": "$18.99"
+      },
+      "MD001": {
+        "name": "Digital Thermometer",
+        "description": "Fast and accurate digital thermometer",
+        "price": "$24.99"
+      },
+      "MD002": {
+        "name": "Blood Pressure Monitor",
+        "description": "Automatic digital blood pressure monitor",
+        "price": "$89.99"
+      },
+      "MD003": {
+        "name": "Pulse Oximeter",
+        "description": "Fingertip pulse oximeter with LED display",
+        "price": "$35.50"
+      },
+      "MD004": {
+        "name": "Stethoscope",
+        "description": "Professional cardiology stethoscope",
+        "price": "$125.00"
+      },
+      "MD005": {
+        "name": "Nebulizer Machine",
+        "description": "Portable nebulizer for respiratory treatment",
+        "price": "$75.99"
+      },
+      "MD006": {
+        "name": "Glucometer Kit",
+        "description": "Blood glucose monitoring system with test strips",
+        "price": "$42.99"
+      },
+      "MED001": {
+        "name": "Antiseptic Solution (500ml)",
+        "description": "Povidone iodine antiseptic solution",
+        "price": "$15.99"
+      },
+      "MED002": {
+        "name": "Hydrogen Peroxide 3%",
+        "description": "Topical antiseptic and wound cleanser",
+        "price": "$6.50"
+      },
+      "MED003": {
+        "name": "Saline Solution (1000ml)",
+        "description": "Sterile normal saline for irrigation",
+        "price": "$12.99"
+      },
+      "MED004": {
+        "name": "Antibiotic Ointment",
+        "description": "Triple antibiotic ointment for wound care",
+        "price": "$9.99"
+      },
+      "MED005": {
+        "name": "Pain Relief Tablets",
+        "description": "Over-the-counter pain relief medication",
+        "price": "$11.75"
+      },
+      "MED006": {
+        "name": "Vitamin C Supplements",
+        "description": "Immune system support supplements",
+        "price": "$19.99"
+      }
+    },
+    "bestSellers": {
+      "MD002": {
+        "originalPrice": "$109.99",
+        "discount": "18%"
+      },
+      "MS001": {
+        "originalPrice": "$54.99",
+        "discount": "16%"
+      },
+      "MD004": {
+        "originalPrice": "$149.99",
+        "discount": "17%"
+      },
+      "MS002": {
+        "originalPrice": "$39.99",
+        "discount": "25%"
+      },
+      "MD001": {
+        "originalPrice": "$29.99",
+        "discount": "17%"
+      },
+      "MD003": {
+        "originalPrice": "$42.50",
+        "discount": "16%"
+      }
+    },
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "subject": "Subject",
+      "message": "Message",
+      "submit": "Send Message",
+      "validation": "Please fill in all required fields",
+      "success": "Your message has been sent successfully! We will contact you soon."
+    },
+    "whatsapp": {
+      "orderMessage": "Hello! I would like to order product ID: "
+    }
+  }
+  

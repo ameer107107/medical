@@ -1,5 +1,5 @@
 // Language and theme state
-let currentLang = 'en';
+let currentLang = localStorage.getItem("lang") || "en";
 let isDarkMode = false;
 
 // Medical Products Data with IDs and Images
@@ -7,6 +7,14 @@ const products = [
     // Medical Supplies
     { 
         id: 'MS001', 
+        category: 'supplies', 
+        name: { en: 'Surgical Gloves (Box of 100)', ar: 'قفازات جراحية (علبة 100 قطعة)' },
+        description: { en: 'Sterile latex surgical gloves for medical procedures', ar: 'قفازات جراحية معقمة من اللاتكس للإجراءات الطبية' },
+        price: '$45.99',
+        image: 'attached_assets/stock_images/surgical_gloves_medi_a193c302.jpg'
+    },
+    { 
+        id: 'MS0028', 
         category: 'supplies', 
         name: { en: 'Surgical Gloves (Box of 100)', ar: 'قفازات جراحية (علبة 100 قطعة)' },
         description: { en: 'Sterile latex surgical gloves for medical procedures', ar: 'قفازات جراحية معقمة من اللاتكس للإجراءات الطبية' },
@@ -183,43 +191,48 @@ const bestSellingProducts = [
 
 // Language switching functionality
 function toggleLanguage() {
-    currentLang = currentLang === 'en' ? 'ar' : 'en';
+    currentLang = currentLang === "en" ? "ar" : "en";
+    localStorage.setItem("lang", currentLang); // نخزن اللغة المختارة
+  
     const html = document.documentElement;
-    
-    if (currentLang === 'ar') {
-        html.setAttribute('lang', 'ar');
-        html.setAttribute('dir', 'rtl');
+    if (currentLang === "ar") {
+      html.setAttribute("lang", "ar");
+      html.setAttribute("dir", "rtl");
     } else {
-        html.setAttribute('lang', 'en');
-        html.setAttribute('dir', 'ltr');
+      html.setAttribute("lang", "en");
+      html.setAttribute("dir", "ltr");
     }
-    
+  
     updateTextContent();
-}
-
-// Dark mode functionality
-function toggleDarkMode() {
+  }
+  
+  // Dark mode functionality
+  function toggleDarkMode() {
     isDarkMode = !isDarkMode;
     const html = document.documentElement;
-    
+  
     if (isDarkMode) {
-        html.setAttribute('data-theme', 'dark');
-        localStorage.setItem('darkMode', 'true');
+      html.setAttribute("data-theme", "dark");
+      localStorage.setItem("darkMode", "true");
     } else {
-        html.setAttribute('data-theme', 'light');
-        localStorage.setItem('darkMode', 'false');
+      html.setAttribute("data-theme", "light");
+      localStorage.setItem("darkMode", "false");
     }
-    
+  
     updateDarkModeIcon();
-}
-
-// Update dark mode icon
-function updateDarkModeIcon() {
-    const darkModeIcon = document.querySelector('.dark-mode-icon');
+  }
+  
+  // Update dark mode icon
+  function updateDarkModeIcon() {
+    const darkModeIcon = document.querySelector(".dark-mode-icon");
     if (darkModeIcon) {
-        darkModeIcon.textContent = isDarkMode ? '☀️' : '🌙';
+      darkModeIcon.textContent = isDarkMode ? "☀️" : "🌙";
     }
-}
+  }
+
+ // Language
+
+
 
 // Initialize dark mode from localStorage (called early to prevent FOUC)
 function initializeDarkMode() {
@@ -278,30 +291,11 @@ function updateTextContent() {
     }
 }
 
-// Update form content for contact page
-function updateFormContent() {
-    const nameInput = document.getElementById('name');
-    const emailInput = document.getElementById('email');
-    const phoneInput = document.getElementById('phone');
-    const messageTextarea = document.getElementById('message');
-    
-    if (nameInput) {
-        nameInput.placeholder = currentLang === 'ar' ? 'أدخل اسمك' : 'Enter your name';
-    }
-    if (emailInput) {
-        emailInput.placeholder = currentLang === 'ar' ? 'أدخل بريدك الإلكتروني' : 'Enter your email';
-    }
-    if (phoneInput) {
-        phoneInput.placeholder = currentLang === 'ar' ? 'أدخل رقم هاتفك' : 'Enter your phone number';
-    }
-    if (messageTextarea) {
-        messageTextarea.placeholder = currentLang === 'ar' ? 'اكتب رسالتك هنا...' : 'Write your message here...';
-    }
-}
+
 
 // WhatsApp functionality
 function openWhatsAppOrder(productId) {
-    const whatsappNumber = "+1234567890"; // Replace with actual WhatsApp business number
+    const whatsappNumber = "+9647819914700"; // Replace with actual WhatsApp business number
     const message = currentLang === 'ar' 
         ? `مرحبا! أود طلب المنتج رقم: ${productId}` 
         : `Hello! I would like to order product ID: ${productId}`;
@@ -397,12 +391,23 @@ function handleContactForm(event) {
     alert(currentLang === 'ar' ? 'تم إرسال رسالتك بنجاح! سنتواصل معك قريباً.' : 'Your message has been sent successfully! We will contact you soon.');
     event.target.reset();
 }
+const savedLang = localStorage.getItem("lang") || "en";
+currentLang = savedLang;
+if (currentLang === "ar") {
+    document.documentElement.setAttribute("lang", "ar");
+    document.documentElement.setAttribute("dir", "rtl");
+} else {
+    document.documentElement.setAttribute("lang", "en");
+    document.documentElement.setAttribute("dir", "ltr");
+}
 
 // Initialize page functionality
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize dark mode from saved preference
     initializeDarkMode();
-    
+
+
+  
     // Set up category buttons event listeners
     const categoryButtons = document.querySelectorAll('.category-btn');
     categoryButtons.forEach(button => {

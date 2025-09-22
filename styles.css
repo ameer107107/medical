@@ -26,7 +26,7 @@ body {
     --text-secondary: #666;
     --border-color: #f0f0f0;
     --card-shadow: rgba(0, 0, 0, 0.1);
-    --hero-bg: linear-gradient(135deg, #4a90e2 0%, #2c5aa0 100%);
+    --hero-bg: linear-gradient(135deg, #3f8439 0%, #11b023 100%);
 }
 
 [data-theme="dark"] {
@@ -36,7 +36,7 @@ body {
     --text-secondary: #b3b3b3;
     --border-color: #333;
     --card-shadow: rgba(0, 0, 0, 0.3);
-    --hero-bg: linear-gradient(135deg, #2c5aa0 0%, #1a3a6b 100%);
+    --hero-bg: linear-gradient(135deg, #3f8439 0%, #11b023 100%);
 }
 
 body {
@@ -69,7 +69,7 @@ header {
     font-size: 1.8rem;
     font-weight: 700;
     letter-spacing: -0.5px;
-    color: #4a90e2;
+    color: #3f8439;
 }
 
 .nav-links {
@@ -90,12 +90,12 @@ header {
 }
 
 .nav-links a:hover {
-    color: #4a90e2;
+    color: #3f8439;
     background: var(--bg-primary);
 }
 
 .nav-links a.active {
-    background: #4a90e2;
+    background: #3f8439;
     color: white;
 }
 
@@ -128,9 +128,9 @@ header {
 
 .dark-mode-btn:hover,
 .header-controls button:hover {
-    background: #4a90e2;
+    background: #3f8439;
     color: white;
-    border-color: #4a90e2;
+    border-color: #3f8439;
 }
 
 .dark-mode-icon {
@@ -189,7 +189,7 @@ header {
     align-items: center;
     gap: 10px;
     background: white;
-    color: #4a90e2;
+    color: #3f8439;
     padding: 15px 30px;
     border-radius: 30px;
     text-decoration: none;
@@ -266,7 +266,7 @@ main {
 
 .feature-card h3 {
     font-size: 1.3rem;
-    color: #4a90e2;
+    color: #3f8439;
     margin-bottom: 15px;
     font-weight: 600;
 }
@@ -284,7 +284,7 @@ main {
 
 .page-title h1 {
     font-size: 2.5rem;
-    color: #2c5aa0;
+    color: #11b023;
     margin-bottom: 10px;
     font-weight: 300;
 }
@@ -318,15 +318,15 @@ main {
 }
 
 .category-btn:hover {
-    border-color: #4a90e2;
-    color: #4a90e2;
+    border-color: #3f8439;
+    color: #3f8439;
     transform: translateY(-2px);
 }
 
 .category-btn.active {
-    background: #4a90e2;
+    background: #3f8439;
     color: white;
-    border-color: #4a90e2;
+    border-color: #3f8439;
     box-shadow: 0 4px 15px rgba(74, 144, 226, 0.3);
 }
 
@@ -454,7 +454,7 @@ main {
 
 .product-name {
     font-size: 1.1rem;
-    color: #4a90e2;
+    color: #3f8439;
     margin-bottom: 8px;
     font-weight: 600;
     line-height: 1.3;
@@ -543,11 +543,11 @@ main {
 }
 
 .about-section h2 {
-    color: #2c5aa0;
+    color: #3f8439;
     font-size: 1.8rem;
     margin-bottom: 20px;
     font-weight: 600;
-    border-bottom: 3px solid #4a90e2;
+    border-bottom: 3px solid #3f8439;
     padding-bottom: 10px;
     display: inline-block;
 }
@@ -569,14 +569,14 @@ main {
     margin-bottom: 15px;
     padding: 20px;
     border-radius: 10px;
-    border-left: 4px solid #4a90e2;
+    border-left: 4px solid #3f8439;
     font-size: 1.05rem;
     transition: all 0.3s ease;
 }
 
 [dir="rtl"] .values-list li {
     border-left: none;
-    border-right: 4px solid #4a90e2;
+    border-right: 4px solid #3f8439;
 }
 
 .values-list li:hover {
@@ -631,7 +631,7 @@ main {
 }
 
 .contact-item h3 {
-    color: #2c5aa0;
+    color: #3f8439;
     font-size: 1.2rem;
     margin-bottom: 10px;
     font-weight: 600;
@@ -650,7 +650,7 @@ main {
 }
 
 .contact-form-section h2 {
-    color: #2c5aa0;
+    color: #3f8439;
     font-size: 1.8rem;
     margin-bottom: 25px;
     font-weight: 600;
@@ -690,12 +690,12 @@ main {
 .form-group select:focus,
 .form-group textarea:focus {
     outline: none;
-    border-color: #4a90e2;
+    border-color: #3f8439;
     box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
 }
 
 .submit-btn {
-    background: linear-gradient(135deg, #4a90e2 0%, #2c5aa0 100%);
+    background: linear-gradient(135deg, #3f8439 0%, #11b023 100%);
     color: white;
     border: none;
     padding: 15px 40px;
@@ -837,3 +837,35 @@ footer p {
 .about-section {
     animation: fadeInUp 0.6s ease forwards;
 }
+
+
+
+/* social icon  */
+
+
+ .social-icons {
+      position: fixed;
+      top: 50%;
+      left: 20px;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    .social-icons a {
+      text-decoration: none;
+      font-size: 28px;
+      color: white;
+      background: #333;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: 0.3s;
+    }
+    .social-icons a:hover {
+      background: #007bff;
+      transform: scale(1.1);
+    }
