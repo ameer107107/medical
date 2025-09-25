@@ -869,3 +869,51 @@ footer p {
       background: #007bff;
       transform: scale(1.1);
     }
+
+    /* Search container */
+.search-container {
+    margin: 2rem 0;
+    display: flex;
+    justify-content: center;
+}
+
+.search-box {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    max-width: 500px;
+    width: 100%;
+}
+
+.search-box input {
+    flex: 1;
+    padding: 0.8rem 1rem;
+    border: 2px solid var(--border-color);
+    border-radius: 25px;
+    font-size: 1rem;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: all 0.3s ease;
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(44, 90, 160, 0.1);
+}
+
+.search-box button {
+    padding: 0.8rem 1.5rem;
+    background-color: var(--primary-color);
+    color: blue;
+    border: none;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.search-box button:hover {
+    background-color: #3f8439;
+    transform: translateY(-1px);
+}

@@ -2,197 +2,59 @@
 let currentLang = localStorage.getItem("lang") || "en";
 let isDarkMode = false;
 
-// Medical Products Data with IDs and Images
-const products = [
-    // Medical Supplies
-    { 
-        id: 'MS001', 
-        category: 'supplies', 
-        name: { en: 'Surgical Gloves (Box of 100)', ar: 'قفازات جراحية (علبة 100 قطعة)' },
-        description: { en: 'Sterile latex surgical gloves for medical procedures', ar: 'قفازات جراحية معقمة من اللاتكس للإجراءات الطبية' },
-        price: '$45.99',
-        image: 'attached_assets/stock_images/surgical_gloves_medi_a193c302.jpg'
-    },
-    { 
-        id: 'MS0028', 
-        category: 'supplies', 
-        name: { en: 'Surgical Gloves (Box of 100)', ar: 'قفازات جراحية (علبة 100 قطعة)' },
-        description: { en: 'Sterile latex surgical gloves for medical procedures', ar: 'قفازات جراحية معقمة من اللاتكس للإجراءات الطبية' },
-        price: '$45.99',
-        image: 'attached_assets/stock_images/surgical_gloves_medi_a193c302.jpg'
-    },
-    { 
-        id: 'MS002', 
-        category: 'supplies', 
-        name: { en: 'Disposable Face Masks (50 Pack)', ar: 'أقنعة وجه يمكن التخلص منها (50 قطعة)' },
-        description: { en: '3-layer surgical masks with ear loops', ar: 'أقنعة جراحية ثلاثية الطبقات مع حلقات الأذن' },
-        price: '$29.99',
-        image: 'attached_assets/stock_images/medical_face_masks_d_8d786020.jpg'
-    },
-    { 
-        id: 'MS003', 
-        category: 'supplies', 
-        name: { en: 'Sterile Gauze Pads (4x4 inch)', ar: 'ضمادات شاش معقمة (4x4 بوصة)' },
-        description: { en: 'Absorbent gauze pads for wound care', ar: 'ضمادات شاش ماصة لرعاية الجروح' },
-        price: '$12.50',
-        image: 'attached_assets/stock_images/sterile_gauze_pads_m_42bc5ca1.jpg'
-    },
-    { 
-        id: 'MS004', 
-        category: 'supplies', 
-        name: { en: 'Medical Tape Roll', ar: 'لفة شريط طبي' },
-        description: { en: 'Hypoallergenic adhesive medical tape', ar: 'شريط طبي لاصق مضاد للحساسية' },
-        price: '$8.75',
-        image: 'attached_assets/stock_images/medical_tape_roll_ad_69f7b558.jpg'
-    },
-    { 
-        id: 'MS005', 
-        category: 'supplies', 
-        name: { en: 'Alcohol Prep Pads (200 Pack)', ar: 'ضمادات كحول للتحضير (200 قطعة)' },
-        description: { en: '70% isopropyl alcohol prep pads', ar: 'ضمادات تحضير بكحول الأيزوبروبيل 70%' },
-        price: '$18.99',
-        image: 'attached_assets/stock_images/antiseptic_solution__9e8e1afc.jpg'
-    },
-    
-    // Medical Devices
-    { 
-        id: 'MD001', 
-        category: 'devices', 
-        name: { en: 'Digital Thermometer', ar: 'مقياس حرارة رقمي' },
-        description: { en: 'Fast and accurate digital thermometer', ar: 'مقياس حرارة رقمي سريع ودقيق' },
-        price: '$24.99',
-        image: 'attached_assets/stock_images/digital_thermometer__725677d4.jpg'
-    },
-    { 
-        id: 'MD002', 
-        category: 'devices', 
-        name: { en: 'Blood Pressure Monitor', ar: 'جهاز مراقبة ضغط الدم' },
-        description: { en: 'Automatic digital blood pressure monitor', ar: 'جهاز مراقبة ضغط الدم الرقمي الأوتوماتيكي' },
-        price: '$89.99',
-        image: 'attached_assets/stock_images/blood_pressure_monit_ee1b6683.jpg'
-    },
-    { 
-        id: 'MD003', 
-        category: 'devices', 
-        name: { en: 'Pulse Oximeter', ar: 'مقياس نبض الأكسجين' },
-        description: { en: 'Fingertip pulse oximeter with LED display', ar: 'مقياس نبض الأكسجين للإصبع مع شاشة LED' },
-        price: '$35.50',
-        image: 'attached_assets/stock_images/pulse_oximeter_medic_e4dce6a5.jpg'
-    },
-    { 
-        id: 'MD004', 
-        category: 'devices', 
-        name: { en: 'Stethoscope', ar: 'سماعة طبية' },
-        description: { en: 'Professional cardiology stethoscope', ar: 'سماعة طبية متخصصة في أمراض القلب' },
-        price: '$125.00',
-        image: 'attached_assets/stock_images/stethoscope_medical__ff8a309e.jpg'
-    },
-    { 
-        id: 'MD005', 
-        category: 'devices', 
-        name: { en: 'Nebulizer Machine', ar: 'جهاز البخاخات الطبية' },
-        description: { en: 'Portable nebulizer for respiratory treatment', ar: 'جهاز بخاخات محمول لعلاج الجهاز التنفسي' },
-        price: '$75.99',
-        image: 'attached_assets/stock_images/nebulizer_machine_re_11b8ff64.jpg'
-    },
-    { 
-        id: 'MD006', 
-        category: 'devices', 
-        name: { en: 'Glucometer Kit', ar: 'جهاز قياس السكر' },
-        description: { en: 'Blood glucose monitoring system with test strips', ar: 'نظام مراقبة سكر الدم مع شرائط الاختبار' },
-        price: '$42.99',
-        image: 'attached_assets/stock_images/pulse_oximeter_medic_e4dce6a5.jpg'
-    },
-    
-    // Medicines
-    { 
-        id: 'MED001', 
-        category: 'medicines', 
-        name: { en: 'Antiseptic Solution (500ml)', ar: 'محلول مطهر (500 مل)' },
-        description: { en: 'Povidone iodine antiseptic solution', ar: 'محلول مطهر بوفيدون اليود' },
-        price: '$15.99',
-        image: 'attached_assets/stock_images/antiseptic_solution__9e8e1afc.jpg'
-    },
-    { 
-        id: 'MED002', 
-        category: 'medicines', 
-        name: { en: 'Hydrogen Peroxide 3%', ar: 'بيروكسيد الهيدروجين 3%' },
-        description: { en: 'Topical antiseptic and wound cleanser', ar: 'مطهر موضعي ومنظف للجروح' },
-        price: '$6.50',
-        image: 'attached_assets/stock_images/antiseptic_solution__9e8e1afc.jpg'
-    },
-    { 
-        id: 'MED003', 
-        category: 'medicines', 
-        name: { en: 'Saline Solution (1000ml)', ar: 'محلول ملحي (1000 مل)' },
-        description: { en: 'Sterile normal saline for irrigation', ar: 'محلول ملحي عادي معقم للغسل' },
-        price: '$12.99',
-        image: 'attached_assets/stock_images/antiseptic_solution__9e8e1afc.jpg'
-    },
-    { 
-        id: 'MED004', 
-        category: 'medicines', 
-        name: { en: 'Antibiotic Ointment', ar: 'مرهم مضاد حيوي' },
-        description: { en: 'Triple antibiotic ointment for wound care', ar: 'مرهم مضاد حيوي ثلاثي لرعاية الجروح' },
-        price: '$9.99',
-        image: 'attached_assets/stock_images/antiseptic_solution__9e8e1afc.jpg'
-    },
-    { 
-        id: 'MED005', 
-        category: 'medicines', 
-        name: { en: 'Pain Relief Tablets', ar: 'أقراص مسكنة للألم' },
-        description: { en: 'Over-the-counter pain relief medication', ar: 'دواء مسكن للألم بدون وصفة طبية' },
-        price: '$11.75',
-        image: 'attached_assets/stock_images/antiseptic_solution__9e8e1afc.jpg'
-    },
-    { 
-        id: 'MED006', 
-        category: 'medicines', 
-        name: { en: 'Vitamin C Supplements', ar: 'مكملات فيتامين سي' },
-        description: { en: 'Immune system support supplements', ar: 'مكملات دعم جهاز المناعة' },
-        price: '$19.99',
-        image: 'attached_assets/stock_images/antiseptic_solution__9e8e1afc.jpg'
-    }
-];
+// Data variables - will be loaded from JSON
+let classificationConfig = {};
+let products = [];
+let bestSellingProducts = [];
+let searchTerm = '';
 
-// Best-selling products with discounts for homepage
-const bestSellingProducts = [
-    {
-        ...products.find(p => p.id === 'MD002'), // Blood Pressure Monitor
-        originalPrice: '$109.99',
-        discount: '18%'
-    },
-    {
-        ...products.find(p => p.id === 'MS001'), // Surgical Gloves  
-        originalPrice: '$54.99',
-        discount: '16%'
-    },
-    {
-        ...products.find(p => p.id === 'MD004'), // Stethoscope
-        originalPrice: '$149.99',
-        discount: '17%'
-    },
-    {
-        ...products.find(p => p.id === 'MS002'), // Face Masks
-        originalPrice: '$39.99',
-        discount: '25%'
-    },
-    {
-        ...products.find(p => p.id === 'MD001'), // Digital Thermometer
-        originalPrice: '$29.99',
-        discount: '17%'
-    },
-    {
-        ...products.find(p => p.id === 'MD003'), // Pulse Oximeter
-        originalPrice: '$42.50',
-        discount: '16%'
+// Load data from JSON files
+async function loadData() {
+    try {
+        const [productsResponse, categoriesResponse, bestsellersResponse] = await Promise.all([
+            fetch('data/products.json'),
+            fetch('data/categories.json'),
+            fetch('data/bestsellers.json')
+        ]);
+        
+        const rawProducts = await productsResponse.json();
+        classificationConfig = await categoriesResponse.json();
+        const bestsellersData = await bestsellersResponse.json();
+        
+        // Filter and validate products data
+        products = rawProducts.filter(product => 
+            product && product.id && product.name && product.description && product.category
+        );
+        
+        // Build bestsellers array from products and bestsellers data
+        bestSellingProducts = bestsellersData
+            .map(bestseller => {
+                const product = products.find(p => p.id === bestseller.productId);
+                if (!product) return null;
+                return {
+                    ...product,
+                    originalPrice: bestseller.originalPrice,
+                    discount: bestseller.discount
+                };
+            })
+            .filter(item => item !== null);
+        
+        return true;
+    } catch (error) {
+        console.error('Error loading data:', error);
+        return false;
     }
-];
+}
+
+// Current filter state
+let currentPrimaryCategory = null;
+let currentSecondaryCategory = null;
+let hasSelectedCategory = false;
 
 // Language switching functionality
 function toggleLanguage() {
     currentLang = currentLang === "en" ? "ar" : "en";
-    localStorage.setItem("lang", currentLang); // نخزن اللغة المختارة
+    localStorage.setItem("lang", currentLang);
   
     const html = document.documentElement;
     if (currentLang === "ar") {
@@ -204,10 +66,10 @@ function toggleLanguage() {
     }
   
     updateTextContent();
-  }
+}
   
-  // Dark mode functionality
-  function toggleDarkMode() {
+// Dark mode functionality
+function toggleDarkMode() {
     isDarkMode = !isDarkMode;
     const html = document.documentElement;
   
@@ -220,19 +82,15 @@ function toggleLanguage() {
     }
   
     updateDarkModeIcon();
-  }
+}
   
-  // Update dark mode icon
-  function updateDarkModeIcon() {
+// Update dark mode icon
+function updateDarkModeIcon() {
     const darkModeIcon = document.querySelector(".dark-mode-icon");
     if (darkModeIcon) {
       darkModeIcon.textContent = isDarkMode ? "☀️" : "🌙";
     }
-  }
-
- // Language
-
-
+}
 
 // Initialize dark mode from localStorage (called early to prevent FOUC)
 function initializeDarkMode() {
@@ -266,14 +124,12 @@ function updateTextContent() {
     const elements = document.querySelectorAll('[data-en][data-ar]');
     elements.forEach(element => {
         if (currentLang === 'ar') {
-            // Use textContent for simple text elements to preserve structure
             if (element.children.length === 0) {
                 element.textContent = element.getAttribute('data-ar');
             } else {
                 element.innerHTML = element.getAttribute('data-ar');
             }
         } else {
-            // Use textContent for simple text elements to preserve structure
             if (element.children.length === 0) {
                 element.textContent = element.getAttribute('data-en');
             } else {
@@ -285,13 +141,114 @@ function updateTextContent() {
     // Update form placeholders and options if on contact page
     updateFormContent();
     
-    // Re-render products if on products page
-    if (document.getElementById('productsContainer')) {
-        displayProducts(getCurrentCategoryFilter());
+    // Re-render products and update classification bars if secondary bar is visible
+    if (document.getElementById('primaryBar')) {
+        if (currentSecondaryCategory && document.getElementById('secondaryBar').style.display !== 'none') {
+            populateSecondaryBar(currentPrimaryCategory);
+        }
+        // Display products if a category has been selected OR if search is active
+        if (hasSelectedCategory || searchTerm) {
+            displayProducts();
+        }
     }
 }
 
+function updateFormContent() {
+    // Update search input placeholder
+    const searchInput = document.getElementById('searchInput');
+    if (searchInput) {
+        const placeholder = currentLang === 'ar' ? 'البحث عن المنتجات...' : 'Search products...';
+        searchInput.placeholder = placeholder;
+    }
+}
 
+// Search functionality with debouncing
+let searchTimeout;
+function performSearch() {
+    clearTimeout(searchTimeout);
+    searchTimeout = setTimeout(() => {
+        const searchInput = document.getElementById('searchInput');
+        searchTerm = searchInput.value.toLowerCase().trim();
+        
+        // Reset category selection if searching
+        if (searchTerm) {
+            currentPrimaryCategory = null;
+            currentSecondaryCategory = null;
+            hasSelectedCategory = false;
+            
+            // Hide classification bars when searching
+            const primaryBar = document.getElementById('primaryBar');
+            const secondaryBar = document.getElementById('secondaryBar');
+            if (primaryBar) primaryBar.style.display = 'none';
+            if (secondaryBar) secondaryBar.style.display = 'none';
+        } else {
+            // Show primary bar when search is cleared
+            const primaryBar = document.getElementById('primaryBar');
+            if (primaryBar) primaryBar.style.display = 'block';
+        }
+        
+        displayProducts();
+    }, 300);
+}
+
+function clearSearch() {
+    const searchInput = document.getElementById('searchInput');
+    searchInput.value = '';
+    searchTerm = '';
+    currentPrimaryCategory = null;
+    currentSecondaryCategory = null;
+    hasSelectedCategory = false;
+    
+    // Show primary bar
+    const primaryBar = document.getElementById('primaryBar');
+    const secondaryBar = document.getElementById('secondaryBar');
+    if (primaryBar) primaryBar.style.display = 'block';
+    if (secondaryBar) secondaryBar.style.display = 'none';
+    
+    // Show initial message
+    const container = document.getElementById('productsContainer');
+    if (container && primaryBar) {
+        container.innerHTML = `
+            <div class="no-products">
+                <p data-en="Please select a category above to view products" data-ar="يرجى اختيار فئة أعلاه لعرض المنتجات">
+                    ${currentLang === 'ar' ? 'يرجى اختيار فئة أعلاه لعرض المنتجات' : 'Please select a category above to view products'}
+                </p>
+            </div>
+        `;
+    }
+}
+
+function filterProductsBySearch(products) {
+    if (!searchTerm) return products;
+    
+    return products.filter(product => {
+        const name = product.name[currentLang].toLowerCase();
+        const description = product.description[currentLang].toLowerCase();
+        const id = product.id.toLowerCase();
+        
+        return name.includes(searchTerm) || 
+               description.includes(searchTerm) || 
+               id.includes(searchTerm);
+    });
+}
+
+function setupSearchListeners() {
+    const searchInput = document.getElementById('searchInput');
+    const clearButton = document.getElementById('clearSearch');
+    
+    if (searchInput) {
+        searchInput.addEventListener('input', performSearch);
+        searchInput.addEventListener('keyup', function(e) {
+            if (e.key === 'Escape') {
+                clearSearch();
+            }
+        });
+    }
+    
+    if (clearButton) {
+        clearButton.addEventListener('click', clearSearch);
+    }
+}
 
 // WhatsApp functionality
 function openWhatsAppOrder(productId) {
@@ -304,12 +261,123 @@ function openWhatsAppOrder(productId) {
     window.open(whatsappUrl, '_blank');
 }
 
+// Primary category selection
+function selectPrimaryCategory(primaryCategory) {
+    currentPrimaryCategory = primaryCategory;
+    currentSecondaryCategory = null;
+    hasSelectedCategory = true;
+    
+    // Update primary buttons
+    document.querySelectorAll('.primary-btn').forEach(btn => btn.classList.remove('active'));
+    document.querySelector(`[data-primary="${primaryCategory}"]`).classList.add('active');
+    
+    // Hide primary bar and show secondary bar
+    document.getElementById('primaryBar').style.display = 'none';
+    document.getElementById('secondaryBar').style.display = 'block';
+    
+    // Populate secondary bar
+    populateSecondaryBar(primaryCategory);
+    
+    // Display all products for this primary category
+    displayProducts();
+}
+
+// Populate secondary classification bar
+function populateSecondaryBar(primaryCategory) {
+    const secondaryBar = document.getElementById('secondaryBar');
+    const categoryButtons = secondaryBar.querySelector('.category-buttons');
+    
+    const config = classificationConfig[primaryCategory];
+    if (!config) return;
+    
+    categoryButtons.innerHTML = config.subcategories.map(subcat => `
+        <button class="category-btn secondary-btn" 
+                data-secondary="${subcat.key}" 
+                data-en="${subcat.name.en}" 
+                data-ar="${subcat.name.ar}"
+                onclick="selectSecondaryCategory('${subcat.key}')">
+            ${subcat.name[currentLang]}
+        </button>
+    `).join('') + `
+        <button class="category-btn secondary-btn back-btn" 
+                data-en="Back" 
+                data-ar="رجوع"
+                onclick="goBackToPrimary()">
+            ${currentLang === 'ar' ? 'رجوع' : 'Back'}
+        </button>
+    `;
+    
+    // Restore active state for currently selected secondary category
+    if (currentSecondaryCategory) {
+        const activeBtn = categoryButtons.querySelector(`[data-secondary="${currentSecondaryCategory}"]`);
+        if (activeBtn) {
+            activeBtn.classList.add('active');
+        }
+    }
+}
+
+// Secondary category selection
+function selectSecondaryCategory(secondaryCategory) {
+    currentSecondaryCategory = secondaryCategory;
+    
+    // Update secondary buttons
+    document.querySelectorAll('.secondary-btn').forEach(btn => btn.classList.remove('active'));
+    document.querySelector(`[data-secondary="${secondaryCategory}"]`).classList.add('active');
+    
+    // Display filtered products
+    displayProducts();
+}
+
+// Go back to primary categories
+function goBackToPrimary() {
+    currentSecondaryCategory = null;
+    
+    // Show primary bar and hide secondary bar
+    document.getElementById('primaryBar').style.display = 'block';
+    document.getElementById('secondaryBar').style.display = 'none';
+    
+    // Display all products for current primary category
+    displayProducts();
+}
+
 // Products functionality with images
-function displayProducts(category = 'all') {
+function displayProducts() {
     const container = document.getElementById('productsContainer');
     if (!container) return;
     
-    const filteredProducts = category === 'all' ? products : products.filter(product => product.category === category);
+    let filteredProducts;
+    
+    if (searchTerm) {
+        // Search mode - search all products
+        filteredProducts = filterProductsBySearch(products);
+    } else if (currentSecondaryCategory) {
+        // Filter by specific secondary category
+        filteredProducts = products.filter(product => 
+            product.primaryCategory === currentPrimaryCategory && 
+            product.category === currentSecondaryCategory
+        );
+    } else if (currentPrimaryCategory) {
+        // Show all products for current primary category
+        filteredProducts = products.filter(product => 
+            product.primaryCategory === currentPrimaryCategory
+        );
+    } else {
+        // No selection made
+        return;
+    }
+    
+    if (filteredProducts.length === 0) {
+        const noResultsMessage = searchTerm 
+            ? (currentLang === 'ar' ? 'لا توجد منتجات تطابق البحث' : 'No products match your search')
+            : (currentLang === 'ar' ? 'لا توجد منتجات في هذه الفئة' : 'No products found in this category');
+            
+        container.innerHTML = `
+            <div class="no-products">
+                <p>${noResultsMessage}</p>
+            </div>
+        `;
+        return;
+    }
     
     container.innerHTML = filteredProducts.map(product => `
         <div class="product-card" data-category="${product.category}">
@@ -328,6 +396,25 @@ function displayProducts(category = 'all') {
             </button>
         </div>
     `).join('');
+}
+
+// Setup classification bars
+function setupClassificationBars() {
+    // Only setup if primary bar exists (products page)
+    const primaryBar = document.getElementById('primaryBar');
+    if (!primaryBar) return;
+    
+    const primaryButtons = document.querySelectorAll('.primary-btn');
+    primaryButtons.forEach(button => {
+        // Check if listener already attached to prevent duplicates
+        if (!button.dataset.initialized) {
+            button.dataset.initialized = 'true';
+            button.addEventListener('click', () => {
+                const primaryCategory = button.getAttribute('data-primary');
+                selectPrimaryCategory(primaryCategory);
+            });
+        }
+    });
 }
 
 // Best-selling products for homepage
@@ -358,22 +445,6 @@ function displayBestSellers() {
     `).join('');
 }
 
-// Category filter functionality
-function filterProducts(category) {
-    // Update active button
-    document.querySelectorAll('.category-btn').forEach(btn => btn.classList.remove('active'));
-    document.querySelector(`[data-category="${category}"]`).classList.add('active');
-    
-    // Display filtered products
-    displayProducts(category);
-}
-
-// Get current category filter
-function getCurrentCategoryFilter() {
-    const activeBtn = document.querySelector('.category-btn.active');
-    return activeBtn ? activeBtn.getAttribute('data-category') : 'all';
-}
-
 // Contact form functionality
 function handleContactForm(event) {
     event.preventDefault();
@@ -391,6 +462,8 @@ function handleContactForm(event) {
     alert(currentLang === 'ar' ? 'تم إرسال رسالتك بنجاح! سنتواصل معك قريباً.' : 'Your message has been sent successfully! We will contact you soon.');
     event.target.reset();
 }
+
+// Initialize language from localStorage
 const savedLang = localStorage.getItem("lang") || "en";
 currentLang = savedLang;
 if (currentLang === "ar") {
@@ -402,23 +475,32 @@ if (currentLang === "ar") {
 }
 
 // Initialize page functionality
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', async function() {
     // Initialize dark mode from saved preference
     initializeDarkMode();
-
-
-  
-    // Set up category buttons event listeners
-    const categoryButtons = document.querySelectorAll('.category-btn');
-    categoryButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            const category = button.getAttribute('data-category');
-            filterProducts(category);
-        });
-    });
     
-    // Initialize products display
-    displayProducts('all');
+    // Load data from JSON files
+    const dataLoaded = await loadData();
+    if (!dataLoaded) {
+        console.error('Failed to load data');
+        return;
+    }
+    
+    // Setup classification bars
+    setupClassificationBars();
+    
+    // Setup search functionality
+    setupSearchListeners();
+    
+    // Ensure primary bar is visible initially (only if elements exist)
+    const primaryBar = document.getElementById('primaryBar');
+    const secondaryBar = document.getElementById('secondaryBar');
+    if (primaryBar) {
+        primaryBar.style.display = 'block';
+    }
+    if (secondaryBar) {
+        secondaryBar.style.display = 'none';
+    }
     
     // Initialize best sellers display on homepage
     displayBestSellers();
@@ -431,4 +513,19 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Update form placeholders on page load
     updateFormContent();
+    
+    // Update text content for current language
+    updateTextContent();
+    
+    // Display initial message since no category is selected (only on products page)
+    const container = document.getElementById('productsContainer');
+    if (container && primaryBar) {
+        container.innerHTML = `
+            <div class="no-products">
+                <p data-en="Please select a category above to view products" data-ar="يرجى اختيار فئة أعلاه لعرض المنتجات">
+                    ${currentLang === 'ar' ? 'يرجى اختيار فئة أعلاه لعرض المنتجات' : 'Please select a category above to view products'}
+                </p>
+            </div>
+        `;
+    }
 });

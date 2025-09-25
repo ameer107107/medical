@@ -1,0 +1,81 @@
+{
+    "medical": {
+        "name": {
+            "en": "General materials",
+            "ar": " مواد عامة"
+        },
+        "subcategories": [
+            {
+                "key": "Oral",
+                "name": {
+                    "en": "🦷 Oral Care",
+                    "ar": " معاجين أسنان"
+                }
+            },
+            {
+                "key": "Hair & Body Care",
+                "name": {
+                    "en": "🧴 Hair & Body Care",
+                    "ar": " 🧴 العناية بالشعر والجسم"
+                }
+            },
+            {
+                "key": "Personal Care",
+                "name": {
+                    "en": "🧼 Personal Care",
+                    "ar": "🧼 العناية الشخصية"
+                }
+            },
+            {
+                "key": "baby",
+                "name": {
+                    "en": "👶 Baby Products",
+                    "ar": " 👶 منتجات الأطفال "
+                }
+            },
+            {
+                "key": "Health",
+                "name": {
+                    "en": "🩺 Health & First Aid",
+                    "ar": "🩺 الصحة والإسعافات "
+                }
+            },
+            {
+                "key": "Specialv",
+                "name": {
+                    "en": "Special Products",
+                    "ar": " منتجات خاصة"
+                }
+            },
+            {
+                "key": "Food",
+                "name": {
+                    "en": " Food & Sweeteners",
+                    "ar": "  أغذية ومحليات"
+                }
+            }
+        ]
+    },
+    "consumables": {
+        "name": {
+            "en": " Medical supplies",
+            "ar": "مستلزمات طبية"
+        },
+        "subcategories": [
+            {
+                "key": "supplies",
+                "name": {
+                    "en": "Medical Supplies",
+                    "ar": "اللوازم الطبية"
+                }
+            },
+            {
+                "key": "medicines",
+                "name": {
+                    "en": "Medicines",
+                    "ar": "الأدوية"
+                }
+            }
+        ]
+    }
+}

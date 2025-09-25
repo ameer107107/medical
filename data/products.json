@@ -1,0 +1,257 @@
+[
+    {
+        "id": "MS001",
+        "category": "supplies",
+        "primaryCategory": "consumables",
+        "name": {
+            "en": "Surgical Gloves (Box of 100)",
+            "ar": "قفازات جراحية (علبة 100 قطعة)"
+        },
+        "description": {
+            "en": "Sterile latex surgical gloves for medical procedures",
+            "ar": "قفازات جراحية معقمة من اللاتكس للإجراءات الطبية"
+        },
+        "price": "$45.99",
+        "image": "attached_assets/stock_images/medical_surgical_glo_8f787358.jpg"
+    },
+    {
+        "id": "MS002",
+        "category": "supplies",
+        "primaryCategory": "consumables",
+        "name": {
+            "en": "Disposable Face Masks (50 Pack)",
+            "ar": "أقنعة وجه يمكن التخلص منها (50 قطعة)"
+        },
+        "description": {
+            "en": "3-layer surgical masks with ear loops",
+            "ar": "أقنعة جراحية ثلاثية الطبقات مع حلقات الأذن"
+        },
+        "price": "$29.99",
+        "image": "attached_assets/stock_images/medical_surgical_glo_8f787358.jpg"
+    },
+    {
+        "id": "MS003",
+        "category": "supplies",
+        "primaryCategory": "consumables",
+        "name": {
+            "en": "Sterile Gauze Pads (4x4 inch)",
+            "ar": "ضمادات شاش معقمة (4x4 بوصة)"
+        },
+        "description": {
+            "en": "Absorbent gauze pads for wound care",
+            "ar": "ضمادات شاش ماصة لرعاية الجروح"
+        },
+        "price": "$12.50",
+        "image": "attached_assets/stock_images/medical_surgical_glo_8f787358.jpg"
+    },
+    {
+        "id": "MS004",
+        "category": "supplies",
+        "primaryCategory": "consumables",
+        "name": {
+            "en": "Medical Tape Roll",
+            "ar": "لفة شريط طبي"
+        },
+        "description": {
+            "en": "Hypoallergenic adhesive medical tape",
+            "ar": "شريط طبي لاصق مضاد للحساسية"
+        },
+        "price": "$8.75",
+        "image": "attached_assets/stock_images/medical_surgical_glo_8f787358.jpg"
+    },
+    {
+        "id": "MS005",
+        "category": "supplies",
+        "primaryCategory": "consumables",
+        "name": {
+            "en": "Alcohol Prep Pads (200 Pack)",
+            "ar": "ضمادات كحول للتحضير (200 قطعة)"
+        },
+        "description": {
+            "en": "70% isopropyl alcohol prep pads",
+            "ar": "ضمادات تحضير بكحول الأيزوبروبيل 70%"
+        },
+        "price": "$18.99",
+        "image": "attached_assets/stock_images/digital_thermometer__311e6846.jpg"
+    },
+    {
+        "id": "MD001",
+        "category": "General materials",
+        "primaryCategory": "baby",
+        "name": {
+            "en": "Digital Thermometer",
+            "ar": "مقياس حرارة رقمي"
+        },
+        "description": {
+            "en": "Fast and accurate digital thermometer",
+            "ar": "مقياس حرارة رقمي سريع ودقيق"
+        },
+        "price": "$24.99",
+        "image": "attached_assets/stock_images/digital_thermometer__311e6846.jpg"
+    },
+    {
+        "id": "MD002",
+        "category": "devices",
+        "primaryCategory": "medical",
+        "name": {
+            "en": "Blood Pressure Monitor",
+            "ar": "جهاز مراقبة ضغط الدم"
+        },
+        "description": {
+            "en": "Automatic digital blood pressure monitor",
+            "ar": "جهاز مراقبة ضغط الدم الرقمي الأوتوماتيكي"
+        },
+        "price": "$89.99",
+        "image": "attached_assets/stock_images/blood_pressure_monit_b407ddf5.jpg"
+    },
+    {
+        "id": "MD003",
+        "category": "devices",
+        "primaryCategory": "medical",
+        "name": {
+            "en": "Pulse Oximeter",
+            "ar": "مقياس نبض الأكسجين"
+        },
+        "description": {
+            "en": "Fingertip pulse oximeter with LED display",
+            "ar": "مقياس نبض الأكسجين للإصبع مع شاشة LED"
+        },
+        "price": "$35.50",
+        "image": "attached_assets/stock_images/blood_pressure_monit_b407ddf5.jpg"
+    },
+    {
+        "id": "MD004",
+        "category": "tools",
+        "primaryCategory": "medical",
+        "name": {
+            "en": "Stethoscope",
+            "ar": "سماعة طبية"
+        },
+        "description": {
+            "en": "Professional cardiology stethoscope",
+            "ar": "سماعة طبية متخصصة في أمراض القلب"
+        },
+        "price": "$125.00",
+        "image": "attached_assets/stock_images/blood_pressure_monit_b407ddf5.jpg"
+    },
+    {
+        "id": "MD005",
+        "category": "devices",
+        "primaryCategory": "medical",
+        "name": {
+            "en": "Nebulizer Machine",
+            "ar": "جهاز البخاخات الطبية"
+        },
+        "description": {
+            "en": "Portable nebulizer for respiratory treatment",
+            "ar": "جهاز بخاخات محمول لعلاج الجهاز التنفسي"
+        },
+        "price": "$75.99",
+        "image": "attached_assets/stock_images/digital_thermometer__311e6846.jpg"
+    },
+    {
+        "id": "MD006",
+        "category": "devices",
+        "primaryCategory": "medical",
+        "name": {
+            "en": "Glucometer Kit",
+            "ar": "جهاز قياس السكر"
+        },
+        "description": {
+            "en": "Blood glucose monitoring system with test strips",
+            "ar": "نظام مراقبة سكر الدم مع شرائط الاختبار"
+        },
+        "price": "$42.99",
+        "image": "attached_assets/stock_images/blood_pressure_monit_b407ddf5.jpg"
+    },
+    {
+        "id": "MED001",
+        "category": "medicines",
+        "primaryCategory": "consumables",
+        "name": {
+            "en": "Antiseptic Solution (500ml)",
+            "ar": "محلول مطهر (500 مل)"
+        },
+        "description": {
+            "en": "Povidone iodine antiseptic solution",
+            "ar": "محلول مطهر بوفيدون اليود"
+        },
+        "price": "$15.99",
+        "image": "attached_assets/stock_images/digital_thermometer__311e6846.jpg"
+    },
+    {
+        "id": "MED002",
+        "category": "medicines",
+        "primaryCategory": "consumables",
+        "name": {
+            "en": "Hydrogen Peroxide 3%",
+            "ar": "بيروكسيد الهيدروجين 3%"
+        },
+        "description": {
+            "en": "Topical antiseptic and wound cleanser",
+            "ar": "مطهر موضعي ومنظف للجروح"
+        },
+        "price": "$6.50",
+        "image": "attached_assets/stock_images/digital_thermometer__311e6846.jpg"
+    },
+    {
+        "id": "MED003",
+        "category": "medicines",
+        "primaryCategory": "consumables",
+        "name": {
+            "en": "Saline Solution (1000ml)",
+            "ar": "محلول ملحي (1000 مل)"
+        },
+        "description": {
+            "en": "Sterile normal saline for irrigation",
+            "ar": "محلول ملحي عادي معقم للغسل"
+        },
+        "price": "$12.99",
+        "image": "attached_assets/stock_images/digital_thermometer__311e6846.jpg"
+    },
+    {
+        "id": "MED004",
+        "category": "medicines",
+        "primaryCategory": "consumables",
+        "name": {
+            "en": "Antibiotic Ointment",
+            "ar": "مرهم مضاد حيوي"
+        },
+        "description": {
+            "en": "Triple antibiotic ointment for wound care",
+            "ar": "مرهم مضاد حيوي ثلاثي لرعاية الجروح"
+        },
+        "price": "$9.99",
+        "image": "attached_assets/stock_images/digital_thermometer__311e6846.jpg"
+    },
+    {
+        "id": "MED005",
+        "category": "medicines",
+        "primaryCategory": "consumables",
+        "name": {
+            "en": "Pain Relief Tablets",
+            "ar": "أقراص مسكنة للألم"
+        },
+        "description": {
+            "en": "Over-the-counter pain relief medication",
+            "ar": "دواء مسكن للألم بدون وصفة طبية"
+        },
+        "price": "$11.75",
+        "image": "attached_assets/stock_images/digital_thermometer__311e6846.jpg"
+    },
+    {
+        "id": "MED006",
+        "category": "medicines",
+        "primaryCategory": "consumables",
+        "name": {
+            "en": "Vitamin C Supplements",
+            "ar": "مكملات فيتامين سي"
+        },
+        "description": {
+            "en": "Immune system support supplements",
+            "ar": "مكملات دعم جهاز المناعة"
+        },
+        "price": "$19.99",
+        "image": "attached_assets/stock_images/digital_thermometer__311e6846.jpg"
+    }
+]

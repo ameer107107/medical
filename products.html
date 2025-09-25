@@ -32,12 +32,26 @@
             <h1 data-en="Medical Products" data-ar="المنتجات الطبية">Medical Products</h1>
         </div>
 
-        <div class="classification-bar">
+        <!-- Search Bar -->
+        <div class="search-container">
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Search products..." data-en-placeholder="Search products..." data-ar-placeholder="البحث عن المنتجات...">
+                <button type="button" id="clearSearch" data-en="Clear" data-ar="مسح">Clear</button>
+            </div>
+        </div>
+
+        <!-- Primary Classification Bar -->
+        <div class="classification-bar primary-bar" id="primaryBar">
             <div class="category-buttons">
-                <button class="category-btn active" data-category="all" data-en="All Products" data-ar="جميع المنتجات">All Products</button>
-                <button class="category-btn" data-category="supplies" data-en="Medical Supplies" data-ar="اللوازم الطبية">Medical Supplies</button>
-                <button class="category-btn" data-category="devices" data-en="Medical Devices" data-ar="الأجهزة الطبية">Medical Devices</button>
-                <button class="category-btn" data-category="medicines" data-en="Medicines" data-ar="الأدوية">Medicines</button>
+                <button class="category-btn primary-btn" data-primary="medical" data-en="Medical Equipment" data-ar=" مواد عامة"> General materials</button>
+                <button class="category-btn primary-btn" data-primary="consumables" data-en="Consumable Supplies" data-ar=" مستلزمات طبية"> Medical supplies</button>
+            </div>
+        </div>
+
+        <!-- Secondary Classification Bar -->
+        <div class="classification-bar secondary-bar" id="secondaryBar" style="display: none;">
+            <div class="category-buttons">
+                <!-- Will be populated dynamically based on primary selection -->
             </div>
         </div>
 

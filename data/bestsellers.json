@@ -1,0 +1,32 @@
+[
+    {
+        "productId": "MD002",
+        "originalPrice": "$109.99",
+        "discount": "18%"
+    },
+    {
+        "productId": "MS001",
+        "originalPrice": "$54.99",
+        "discount": "16%"
+    },
+    {
+        "productId": "MD004",
+        "originalPrice": "$149.99",
+        "discount": "17%"
+    },
+    {
+        "productId": "MS002",
+        "originalPrice": "$39.99",
+        "discount": "25%"
+    },
+    {
+        "productId": "MD001",
+        "originalPrice": "$29.99",
+        "discount": "17%"
+    },
+    {
+        "productId": "MD003",
+        "originalPrice": "$42.50",
+        "discount": "16%"
+    }
+]
